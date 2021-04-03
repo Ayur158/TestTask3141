@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SetLord</title>
+</head>
+<body>
+<form th:method="Patch" th:action="@{/{id} (id=${planet.getId()})}" th:object="${planet}">
+    <label for="name"> Имя </label>
+    <input type="text" th:field="*{name}" id="name">
+    </br>
+    <label for="lord"> ID Повелителя </label>
+    <input type="text" th:field="*{lord}" id="lord" required>
+    </br>
+    <input type="submit" value="Edit">
+</form>
+<form th:method="DELETE" th:action="@{/{id} (id=${planet.getId()})}">
+    <input type="submit" value="Уничтожить">
+</form>
+<a href="/everything"> На главную </a>
+
+</body>
+</html>
